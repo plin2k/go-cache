@@ -3,26 +3,26 @@
 ## Interface 
 
 ```go
-type Cache interface {
+    type Cache interface {
 	Get(string) (interface{}, error)
 	Set(string, interface{}, time.Duration) error
-	Flush() error
 	Delete(string) error
-}
+	Flush() error
+    }
 ```
 
 ## In Memory
 
 ```go
     mem, err := cache.NewMemory()
-	  if err != nil {
-		  fmt.Println(err)
-	  }
+	if err != nil {
+		fmt.Println(err)
+	}
   
-  mem.Set("test1", "hello", 0)
-  mem.Get("test1")
-  mem.Delete("test2")
-  mem.Flush()
+    mem.Set("test1", "hello", 0)
+    mem.Get("test1")
+    mem.Delete("test1")
+    mem.Flush()
 ```
 
 ## Redis
@@ -33,9 +33,9 @@ type Cache interface {
 		fmt.Println(err)
 	}
   
-  redisDb0.Set("test1", "hello", 0)
-  redisDb0.Get("test1")
-  redisDb0.Delete("test2")
-  redisDb0.Flush()
+    redisDb0.Set("test1", "hello", 0)
+    redisDb0.Get("test1")
+    redisDb0.Delete("test1")
+    redisDb0.Flush()
 ```
 
